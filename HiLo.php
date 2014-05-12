@@ -3,8 +3,15 @@
 
 // generates number to guess
 
-$x = rand(0,100);
-//echo "{$x}\n";
+if ($argc < 3) {
+	echo " please run cmd again and enter min and max value after filename\n";
+	exit(1);
+}	
+
+
+
+$x = rand($argv[1],$argv[2]);
+echo "{$x}\n";
 
 $guesses = 0;
 
@@ -13,8 +20,7 @@ fwrite(STDOUT, "guess a number betwen 0 and 100\n");
 
 // responses
 
-do {
-
+	do	{
 	$guess = fgets(STDIN);
 	// add 1 to #guesses
 	$guesses++;
