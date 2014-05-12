@@ -1,14 +1,14 @@
 <?php
 
 
-// generates number to guess
+// verifies there are min and max argument
 
 if ($argc < 3) {
 	echo " please run cmd again and enter min and max value after filename\n";
 	exit(1);
 }	
 
-
+// generates number to guess using input arguments
 
 $x = rand($argv[1],$argv[2]);
 echo "{$x}\n";
@@ -16,10 +16,9 @@ echo "{$x}\n";
 $guesses = 0;
 
 // receives users guess
-fwrite(STDOUT, "guess a number betwen 0 and 100\n");
+fwrite(STDOUT, "guess a number betwen {$argv[1]} and {$argv[2]}\n");
 
-// responses
-
+// response evaluation
 	do	{
 	$guess = fgets(STDIN);
 	// add 1 to #guesses
