@@ -12,23 +12,17 @@ fwrite(STDOUT, "guess a number betwen 0 and 100\n");
 
 // echo if correct
 
-do{
+do {
 
-$guess = fgets(STDIN);
+	$guess = fgets(STDIN);
 
-if ($guess == $x){
-	echo "Correctamundo !!\n";
-	
-}
-	
-// echo if incorrect
-	elseif ($guess > $x){
+	if ($guess == $x) {
+		echo "Correctamundo !!\n";
+	} elseif ($guess > $x) {
 		echo " Lower\n";
-}
-
-	else 
+	} else {
 		echo "Higher\n";
-
+	}
 
 } while ($guess != $x);
 
